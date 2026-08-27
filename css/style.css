@@ -111,20 +111,22 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 0.7rem;
   margin: 1.8rem 0;
+  align-items: start;
 }
 .galerie img {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  height: auto;
   border-radius: 3px;
 }
 
 /* Diashow auf der Startseite */
 .diashow {
   position: relative;
-  width: 100vw;
-  margin: -2.4rem 0 2.4rem calc(50% - 50vw);
-  height: min(58vh, 480px);
+  width: min(100vw, 1100px);
+  margin: -2.4rem 0 2.4rem 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 3 / 2;
+  max-height: 560px;
   overflow: hidden;
   background: #1a1815;
 }
@@ -261,7 +263,7 @@ figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
   .person { grid-template-columns: 110px 1fr; gap: 1rem; }
 }
 
-figure.flyer img { max-width: 400px; }
+figure.flyer img { max-width: 300px; }
 
 /* Lightbox */
 .galerie img, figure img { cursor: zoom-in; }
