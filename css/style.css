@@ -29,14 +29,28 @@ a:hover, a:focus { text-decoration: underline; }
 .site-header .inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 1.4rem 1.25rem 1rem;
+  padding: 0.9rem 1.25rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
 }
-.site-logo { display: inline-block; margin: 0 0 0.2rem; }
-.site-logo img { width: 170px; height: auto; }
+.site-logo { display: block; flex: none; }
+.site-logo img { width: 104px; height: auto; }
+.kopf-text { flex: 1; min-width: 0; }
 .site-claim {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.45rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+@media (max-width: 700px) {
+  .site-header .inner { gap: 0.9rem; padding: 0.7rem 1rem 0.6rem; }
+  .site-logo img { width: 76px; }
+  .site-claim { display: none; }
+  .site-nav { gap: 0.2rem 0.95rem; }
+  .seitenkopf .inner { padding: 1.1rem 1rem 1.3rem; }
+  h1 { font-size: 1.6rem; }
+  .untertitel { font-size: 1rem; }
 }
 .site-nav { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; }
 .site-nav a {
@@ -56,7 +70,7 @@ a:hover, a:focus { text-decoration: underline; }
 .seitenkopf .inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 2.4rem 1.25rem 2.6rem;
+  padding: 1.5rem 1.25rem 1.7rem;
 }
 .seitenkopf h1 { margin: 0; }
 .seitenkopf .untertitel { margin: 0.6rem 0 0; }
