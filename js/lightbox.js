@@ -53,3 +53,20 @@
     img.addEventListener('click', function () { oeffnen(i); });
   });
 })();
+
+// Diashow auf der Startseite: sanfter Wechsel alle 5 Sekunden
+(function () {
+  var dia = document.querySelector('.diashow');
+  if (!dia) return;
+  var dias = dia.querySelectorAll('img');
+  var legende = dia.querySelector('.legende');
+  var i = 0;
+  function zeigen(n) {
+    dias[i].classList.remove('aktiv');
+    i = n % dias.length;
+    dias[i].classList.add('aktiv');
+    if (legende) legende.textContent = dias[i].dataset.legende || '';
+  }
+  if (legende) legende.textContent = dias[0].dataset.legende || '';
+  if (dias.length > 1) setInterval(function () { zeigen(i + 1); }, 5000);
+})();
